@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="slide">
+            <a href="#" onclick="logintab()"  class="active" id="lbtn">Login</a>
+            <a href="#" onclick="registertab()" id="rbtn">Register</a>
+        </div>
+
+        <div class="formc">
+            <form action="/register" method="POST" id="register">
+                <input type="text" placeholder="Name" name="name">
+
+                <input type="email" placeholder="Email" name="email">
+
+                <input type="phone" placeholder="Phone no" name="phone">
+
+                <input type="password" placeholder="Password" name="password">
+
+                <input type="password" placeholder="Re-type Password" name="cpassword">
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <form action="/login" method="POST" id="login">
+                <input type="email" placeholder="Email" name="email">
+                <input type="password" placeholder="Password" name="password">
+                <button type="submit" class="btn">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        let login = document.getElementById('login')
+        let register = document.getElementById('register')
+        let lbtn = document.getElementById('lbtn')
+        let rbtn = document.getElementById('rbtn')
+        let container = document.querySelector('.container')
+
+        function logintab()
+        {
+            register.style.top = "400px";
+            login.style.top = "0px";
+            container.style.height = "280px";
+            lbtn.classList.add('active')
+            rbtn.classList.remove('active')
+        }
+        function registertab()
+        {
+            register.style.top = "0px";
+            login.style.top = "400px";
+            container.style.height = "450px"
+            rbtn.classList.add('active')
+            lbtn.classList.remove('active')
+        }
+    </script>
+
+
+</body>
+
+</html>
